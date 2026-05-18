@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Built App
+BreakReminders.app/
+
+# Xcode (if generated)
+*.xcodeproj
+*.xcworkspace
