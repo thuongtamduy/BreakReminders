@@ -1,65 +1,50 @@
-# ⏳ BreakReminders
+# BreakReminders 👁
 
-A minimalist and premium macOS productivity and health application built with **Swift 5** and **SwiftUI**. The app enforces the **20-20-20 eye-rest rule** (Every 20 minutes, take a 20-second break looking at something 20 feet away) to protect your eyes from strain.
+A premium, minimalist macOS Menu Bar application designed to remind you to take breaks and protect your eyes following the 20-20-20 rule.
 
-![App Icon](app_icon.iconset/icon_512x512.png) *(If you have the image in the root or another path, update this link)*
+![App Screenshot](https://raw.githubusercontent.com/thuongtamduy/BreakReminders/main/screenshot.png) *(Note: Please update this link with your real screenshot path if you upload it to GitHub!)*
 
----
+## 🌟 Features
 
-## ✨ Features
+### 1. Premium & Aesthetic Design
+- **Beautiful Popover Panel**: A sleek UI dropping down from the menu bar with real-time countdown and visual progress bar.
+- **Zen Break Screen**: Full-screen overlay with a smoothly moving gradient background (Teal - Blue - Purple) and frosted glass effect.
 
-- **Menu Bar Resident:** Runs silently in the background on your Menu Bar, showing the remaining time.
-- **Fullscreen Overlay:** When the timer hits zero, a beautiful, borderless window covers all screens with a Hud Window blur effect, forcing you to take a break.
-- **Zen Countdown View:** Features a smooth circular progress ring and gentle text reminders.
-- **Smart Timer:** Automatically pauses and resets when your Mac goes to sleep or the screensaver starts, preventing false break triggers.
-- **Multi-Monitor Support:** The overlay appears on all connected screens.
+### 2. Smart Automation
+- **Meeting Detection**: Automatically pauses the countdown when you are in a meeting (Zoom, Microsoft Teams, Webex, Skype, Slack) so it won't disturb your important calls.
+- **Idle Presence Detection**: If you leave your desk (no mouse/keyboard input for 5 minutes), the app auto-resets the timer when you return.
 
----
+### 3. Health & Wellness
+- **Interactive Eye Exercises**: During the break, a glowing dot moves in an infinity loop (♾️) for you to follow with your eyes, helping to relax eye muscles.
+- **Relaxing Audio**: Peaceful bell sounds when a break starts and ends.
 
-## 🛠 Tech Stack
-
-- **Language:** Swift 5
-- **Frameworks:** SwiftUI, AppKit
-- **Platforms:** macOS 13.0+
-
----
+### 4. High Customization
+- Choose between various work durations (from 30s for testing up to 120 minutes).
+- Choose break durations (from 10s up to 10 minutes).
+- Toggle sound effects and visual animations on/off.
+- Daily statistics to see how many cycles you completed today.
 
 ## 🚀 How to Run
 
-### Method 1: Using the `.app` Bundle (Recommended)
-We have already created a pre-built application bundle for you:
-1. Open the project folder in Finder.
-2. Locate `BreakReminders.app`.
-3. Drag it to your `Applications` folder.
-4. Double-click to run! 
-   *(Note: Since it is not signed, you may need to right-click and choose **Open** the first time).*
+### From Source
+Requires macOS 13.0+ and Swift 5.7+.
 
-### Method 2: Using Swift Package Manager
-If you want to run it from the source code directly:
 ```bash
+git clone https://github.com/thuongtamduy/BreakReminders.git
+cd BreakReminders
 swift run
 ```
-To build a production binary:
+
+### Build the App Bundle
+To build a standalone `.app` that you can drag to your Applications folder:
+
 ```bash
 swift build -c release
+mkdir -p BreakReminders.app/Contents/MacOS BreakReminders.app/Contents/Resources
+cp .build/release/BreakReminders BreakReminders.app/Contents/MacOS/
+cp AppIcon.icns BreakReminders.app/Contents/Resources/
+# (Make sure Info.plist is correctly set up in Contents/)
 ```
 
----
-
-## 📂 Project Structure
-
-- `BreakRemindersApp.swift`: Main entry point setting up the `MenuBarExtra`.
-- `TimerEngine.swift`: The observable object managing the timer logic and system notifications.
-- `BreakView.swift`: The SwiftUI view for the overlay screen with the circular countdown.
-- `RestWindow.swift`: Custom AppKit `NSWindow` implementation for multi-monitor blocking.
-- `VisualEffectView.swift`: Bridge for `NSVisualEffectView` to bring native glassmorphism to SwiftUI.
-
----
-
-## 🎨 Customization
-You can adjust the work and break durations in `TimerEngine.swift`:
-- `workDuration`: Set to `20 * 60` for 20 minutes.
-- `breakDuration`: Set to `20` for 20 seconds.
-
----
-*Stay healthy, keep your eyes rested!*
+## 📄 License
+This project is open-source. Feel free to modify and use it!
