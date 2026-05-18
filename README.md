@@ -2,8 +2,6 @@
 
 A premium, minimalist macOS Menu Bar application designed to remind you to take breaks and protect your eyes following the 20-20-20 rule.
 
-![App Screenshot](https://raw.githubusercontent.com/thuongtamduy/BreakReminders/main/screenshot.png) *(Note: Please update this link with your real screenshot path if you upload it to GitHub!)*
-
 ## 🌟 Features
 
 ### 1. Premium & Aesthetic Design
@@ -43,7 +41,6 @@ swift build -c release
 mkdir -p BreakReminders.app/Contents/MacOS BreakReminders.app/Contents/Resources
 cp .build/release/BreakReminders BreakReminders.app/Contents/MacOS/
 cp AppIcon.icns BreakReminders.app/Contents/Resources/
-# (Make sure Info.plist is correctly set up in Contents/)
 ```
 
 ## 📄 License
